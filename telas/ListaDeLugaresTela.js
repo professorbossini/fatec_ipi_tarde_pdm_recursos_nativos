@@ -22,8 +22,8 @@ const ListaDeLugaresTela = (props) => {
                             tituloLugar: lugar.item.titulo, idLugar: lugar.id
                         })
                     }}
-                    imagem={null}
-                    endereco={null}
+                    imagem={lugar.item.imagemURI}
+                    endereco={'Um endereço'}
                 />
             }
         />

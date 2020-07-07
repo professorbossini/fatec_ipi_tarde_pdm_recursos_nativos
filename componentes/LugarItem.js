@@ -11,7 +11,7 @@ import Cores from '../constantes/Cores'
 
 const LugarItem = (props) => {
     return (
-        <TouchableOpacity onPress={props.onSelect} style={StyleSheet.lugarItem}>
+        <TouchableOpacity onPress={props.onSelect} style={styles.lugarItem}>
             <Image
                 style={styles.imagem}
                 source={{ uri: props.imagem }} />

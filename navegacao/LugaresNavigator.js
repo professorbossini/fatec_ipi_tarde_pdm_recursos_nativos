@@ -9,7 +9,7 @@ import { createAppContainer } from 'react-navigation';
 
 const LugaresNavigator = createStackNavigator({
     Lugares: ListaDeLugaresTela,
-    DetalheDoLugar: DetalhesDoLugarTela,
+    DetalhesDoLugar: DetalhesDoLugarTela,
     NovoLugar: NovoLugarTela,
     Mapa: MapaTela
 });

@@ -4,10 +4,17 @@ import Cores from '../constantes/Cores';
 import { useDispatch } from 'react-redux';
 
 import * as lugaresActions from '../store/lugares-actions';
+import TiraFoto from '../componentes/TiraFoto';
 
 const NovoLugarTela = (props) => {
 
     const [novoLugar, setNovoLugar] = useState('');
+
+    const [imagemURI, setImagemURI] = useState();
+
+    const fotoTirada = imagemURI => {
+        setImagemURI(imagemURI);
+    }
 
     const dispatch = useDispatch();
 
@@ -17,7 +24,7 @@ const NovoLugarTela = (props) => {
 
     const adicionarLugar = () => {
         //console.log("Adicionando lugar...");
-        dispatch(lugaresActions.addLugar(novoLugar));
+        dispatch(lugaresActions.addLugar(novoLugar, imagemURI));
         props.navigation.goBack();
     }
 
@@ -29,6 +36,7 @@ const NovoLugarTela = (props) => {
                     style={estilos.textInput}
                     onChangeText={novoLugarAlterado}
                     value={novoLugar} />
+                <TiraFoto onFotoTirada={fotoTirada} />
                 <Button
                     title="Salvar lugar"
                     color={Cores.primary}
